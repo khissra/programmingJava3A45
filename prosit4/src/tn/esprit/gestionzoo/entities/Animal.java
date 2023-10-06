@@ -38,8 +38,11 @@ public class Animal {
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("L'âge de l'animal ne peut pas être négatif.");
+        }}
 
     public boolean isMammal() {
         return isMammal;

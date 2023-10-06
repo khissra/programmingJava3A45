@@ -32,18 +32,17 @@ public class Zoo {
     }
 
     public boolean addAnimal(Animal animal) {
+        if (isZooFull()) {
+            return false;
+        }
         for (int i = 0; i < animalCount; i++) {
             if (animals[i].getName().equals(animal.getName())) {
                 return false;
             }
         }
-        if (animalCount < nbrCages) {
             animals[animalCount] = animal;
             animalCount++;
             return true;
-        } else {
-            return false;
-        }
     }
     public boolean removeAnimal(Animal animal) {
         for (int i = 0; i < animalCount; i++) {
@@ -89,7 +88,11 @@ public class Zoo {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Le nom du zoo ne peut pas etre vide.");
+        }
     }
 
     public int getAnimalCount() {
