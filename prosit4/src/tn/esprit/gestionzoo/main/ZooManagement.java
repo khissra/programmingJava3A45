@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.*;
 import java.util.Scanner;
 public class ZooManagement {
     private int nbrCages;
@@ -13,12 +15,6 @@ public class ZooManagement {
     }
 
     public static void main(String[] args) {
-        int [] tab = new int[3];
-
-        for(int i : tab){
-            System.out.println(i);
-        }
-
         //////  Instruction 16 /////////
         Animal lion1 = new Animal("Felidae", "Lion1", 3, true);
         Animal lion2 = new Animal("Felidae", "Lion2", 3, true);
